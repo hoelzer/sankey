@@ -1,5 +1,5 @@
 # sankey
-Build a Sankey plot from an input TSV file.
+Build a Sankey plot (in HTML format) from an input TSV file.
 
 ![Example](https://github.com/hoelzer/sankey/blob/master/viruses_sankey.png)
 
@@ -84,9 +84,8 @@ library(magrittr)
 Taxonomy <- jsonlite::fromJSON("test/viruses.csv.json")
 
 # show in browser
-sankeyNetwork(Links = Taxonomy$links, Nodes = Taxonomy$nodes, Source = "source", Target = "target", Value = "value", NodeID = "name", units = "count", fontSize = 12, nodeWidth = 30, nodeShadow = TRUE, nodePadding = 20, nodeStrokeWidth = 1, nodeCornerRadius = 10, dragY = TRUE, dragX = TRUE, numberFormat = ",.3g") 
+sankeyNetwork(Links = Taxonomy$links, Nodes = Taxonomy$nodes, Source = "source", Target = "target", Value = "value", NodeID = "name", units = "count", fontSize = 22, nodeWidth = 30, nodeShadow = TRUE, nodePadding = 30, nodeStrokeWidth = 1, nodeCornerRadius = 10, dragY = TRUE, dragX = TRUE, numberFormat = ",.3g")
 
 # print to HTML file
-sankeyNetwork(Links = Taxonomy$links, Nodes = Taxonomy$nodes, Source = "source", Target = "target", Value = "value", NodeID = "name", units = "count", fontSize = 12, nodeWidth = 30, nodeShadow = TRUE, nodePadding = 20, nodeStrokeWidth = 1, nodeCornerRadius = 10, dragY = TRUE, dragX = TRUE, numberFormat = ",.3g") %>% saveNetwork(file = 'viruses_sankey.html')
-
+sankeyNetwork(Links = Taxonomy$links, Nodes = Taxonomy$nodes, Source = "source", Target = "target", Value = "value", NodeID = "name", units = "count", fontSize = 22, nodeWidth = 30, nodeShadow = TRUE, nodePadding = 30, nodeStrokeWidth = 1, nodeCornerRadius = 10, dragY = TRUE, dragX = TRUE, numberFormat = ",.3g") %>% saveNetwork(file = 'viruses_sankey.html')
 ```
