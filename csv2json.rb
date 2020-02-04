@@ -9,7 +9,7 @@
 TSV = File.open(ARGV[0], 'r')
 JSON = File.open(ARGV[0]+".json", 'w')
 
-cutoff = 200
+cutoff = ARGV[1].to_i
 
 id2taxa = {}
 sum_for_taxa = {}

@@ -52,8 +52,10 @@ Here, we have identified 12 Mycobacterium phage Naca, 10 Microbacterium phage Di
 
 Run:
 ```bash
-./csv2json.rb test/viruses.csv
+./csv2json.rb test/viruses.csv 200
 ```
+
+Yous should apply a cutoff (here ``200``) depending on your input because otherwise the Sankey plot will become to large. You can test different cutoffs.  
 
 The resulting ``.json`` file can be used to plot the Sankey. 
 
