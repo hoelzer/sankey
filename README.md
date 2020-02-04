@@ -1,7 +1,7 @@
 # sankey
 Build a Sankey plot from an input TSV file.
 
-![viruses_sankey.png](Example)
+![Example](https://github.com/hoelzer/sankey/blob/master/viruses_sankey.png)
 
 ## 1) translate input TSV into JSON format
 
