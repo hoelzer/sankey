@@ -9,12 +9,16 @@
 TSV = File.open(ARGV[0], 'r')
 JSON = File.open(ARGV[0]+".json", 'w')
 
+cutoff = 200
+
 id2taxa = {}
 sum_for_taxa = {}
 taxa_count = 0
 TSV.each do |line|
     split = line.chomp.split("\t")
     count = split[0].to_i
+   
+    next if count < cutoff
     
     # nodes
     lineage = split[2,split.size]
