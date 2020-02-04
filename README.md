@@ -59,13 +59,14 @@ The resulting ``.json`` file can be used to plot the Sankey.
 
 Based on [https://github.com/fbreitwieser/sankeyD3](https://github.com/fbreitwieser/sankeyD3).
 
-### Install R
+### Install R and dependencies
 ```bash
-conda create -n sankey -c r r-base
+conda create -n sankey -c r r-base pandoc
 conda activate sankey
 R
 ```
 ```R
+# basics needed for Sankey HTML
 install.packages('devtools')
 devtools::install_github("fbreitwieser/sankeyD3")
 ```
@@ -84,5 +85,6 @@ Taxonomy <- jsonlite::fromJSON("test/viruses.csv.json")
 sankeyNetwork(Links = Taxonomy$links, Nodes = Taxonomy$nodes, Source = "source", Target = "target", Value = "value", NodeID = "name", units = "count", fontSize = 12, nodeWidth = 30, nodeShadow = TRUE, nodePadding = 20, nodeStrokeWidth = 1, nodeCornerRadius = 10, dragY = TRUE, dragX = TRUE, numberFormat = ",.3g") 
 
 # print to HTML file
-sankeyNetwork(Links = Taxonomy$links, Nodes = Taxonomy$nodes, Source = "source", Target = "target", Value = "value", NodeID = "name", units = "count", fontSize = 12, nodeWidth = 30, nodeShadow = TRUE, nodePadding = 20, nodeStrokeWidth = 1, nodeCornerRadius = 10, dragY = TRUE, dragX = TRUE, numberFormat = ",.3g") %>% saveNetwork(file = 'test/viruses_sankey.html')
+sankeyNetwork(Links = Taxonomy$links, Nodes = Taxonomy$nodes, Source = "source", Target = "target", Value = "value", NodeID = "name", units = "count", fontSize = 12, nodeWidth = 30, nodeShadow = TRUE, nodePadding = 20, nodeStrokeWidth = 1, nodeCornerRadius = 10, dragY = TRUE, dragX = TRUE, numberFormat = ",.3g") %>% saveNetwork(file = 'viruses_sankey.html')
+
 ```
