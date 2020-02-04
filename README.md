@@ -7,7 +7,7 @@ Build a Sankey plot from an input TSV file.
 ```bash
 12	root	Viruses	Caudovirales	Siphoviridae	Fromanvirus	unclassified Fromanvirus	Mycobacterium phage Naca
 10	root	Viruses	Caudovirales	Siphoviridae	Dismasvirus	unclassified Dismasvirus	Microbacterium phage Didgeridoo
-8	root	Viruses	unclassified    Baculoviridae	Betabaculovirus	Spodoptera litura granulovirus
+8	root	Viruses	unclassified    Baculoviridae	Betabaculovirus	unclassified Betabaculovirus	Spodoptera litura granulovirus
 ```
 __Important__: At the moment your TSV needs to have the same amount of columns for each row. Insert _unclassified XXX_ if you are missing a rank.
 
