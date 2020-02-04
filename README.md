@@ -63,7 +63,7 @@ The resulting ``.json`` file can be used to plot the Sankey.
 
 Based on [https://github.com/fbreitwieser/sankeyD3](https://github.com/fbreitwieser/sankeyD3).
 
-### Install R and dependencies
+### Install R and dependencies...
 ```bash
 conda create -n sankey -c r r-base pandoc
 conda activate sankey
@@ -75,7 +75,13 @@ install.packages('devtools')
 devtools::install_github("fbreitwieser/sankeyD3")
 ```
 
-# Generate Sankey via interactive R session
+### ... or use this Docker environment
+```bash
+docker run --rm -it -v $PWD:/input nanozoo/sankey_plot:0.12.3--8cf7f6a /bin/bash
+```
+
+### Generate Sankey via interactive R session
+Use a conda environment or the Docker. 
 ```bash
 R
 ```
@@ -93,3 +99,4 @@ sankeyNetwork(Links = Taxonomy$links, Nodes = Taxonomy$nodes, Source = "source",
 ```
 
 Apply ``orderByPath = TRUE`` if the child nodes should be ordered by path instead of their size. 
+
