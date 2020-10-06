@@ -55,7 +55,7 @@ Run:
 ./csv2json.rb test/viruses.csv 200
 ```
 
-Yous should apply a cutoff (here ``200``) depending on your input because otherwise the Sankey plot will become to large. You can test different cutoffs.  
+You should apply a cutoff (here ``200``) depending on your input because otherwise the Sankey plot will become to large. You can test different cutoffs.  
 
 The resulting ``.json`` file can be used to plot the Sankey. 
 
@@ -77,7 +77,7 @@ devtools::install_github("fbreitwieser/sankeyD3")
 
 ### ... or use this Docker environment
 ```bash
-docker run --rm -it -v $PWD:/input nanozoo/sankey_plot:0.12.3--8cf7f6a /bin/bash
+docker run --rm -it -v $PWD:$PWD -w $PWD nanozoo/sankey_plot:0.12.3--8cf7f6a /bin/bash
 ```
 
 ### Generate Sankey via interactive R session
