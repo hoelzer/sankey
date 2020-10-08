@@ -92,10 +92,18 @@ library(magrittr)
 Taxonomy <- jsonlite::fromJSON("test/viruses.csv.json")
 
 # show in browser
-sankeyNetwork(Links = Taxonomy$links, Nodes = Taxonomy$nodes, Source = "source", Target = "target", Value = "value", NodeID = "name", units = "count", fontSize = 22, nodeWidth = 30, nodeShadow = TRUE, nodePadding = 30, nodeStrokeWidth = 1, nodeCornerRadius = 10, dragY = TRUE, dragX = TRUE, numberFormat = ",.3g")
+sankeyNetwork(Links = Taxonomy$links, Nodes = Taxonomy$nodes, Source = "source", 
+    Target = "target", Value = "value", NodeID = "name", units = "count", 
+    fontSize = 22, nodeWidth = 30, nodeShadow = TRUE, nodePadding = 30, 
+    nodeStrokeWidth = 1, nodeCornerRadius = 10, dragY = TRUE, dragX = TRUE, 
+    numberFormat = ",.3g")
 
 # print to HTML file
-sankeyNetwork(Links = Taxonomy$links, Nodes = Taxonomy$nodes, Source = "source", Target = "target", Value = "value", NodeID = "name", units = "count", fontSize = 22, nodeWidth = 30, nodeShadow = TRUE, nodePadding = 30, nodeStrokeWidth = 1, nodeCornerRadius = 10, dragY = TRUE, dragX = TRUE, numberFormat = ",.3g") %>% saveNetwork(file = 'viruses_sankey.html')
+sankeyNetwork(Links = Taxonomy$links, Nodes = Taxonomy$nodes, Source = "source", 
+    Target = "target", Value = "value", NodeID = "name", units = "count", 
+    fontSize = 22, nodeWidth = 30, nodeShadow = TRUE, nodePadding = 30, 
+    nodeStrokeWidth = 1, nodeCornerRadius = 10, dragY = TRUE, dragX = TRUE, 
+    numberFormat = ",.3g") %>% saveNetwork(file = 'viruses_sankey.html')
 ```
 
 Apply ``orderByPath = TRUE`` if the child nodes should be ordered by path instead of their size. 
