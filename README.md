@@ -52,7 +52,7 @@ Here, we have identified 12 Mycobacterium phage Naca, 10 Microbacterium phage Di
 
 Run:
 ```bash
-./csv2json.rb test/viruses.csv 200
+./tsv2json.rb test/viruses.tsv 200
 ```
 
 You should apply a cutoff (here ``200``) depending on your input because otherwise the Sankey plot will become to large. You can test different cutoffs.  
@@ -89,7 +89,7 @@ R
 library(sankeyD3)
 library(magrittr)
 
-Taxonomy <- jsonlite::fromJSON("test/viruses.csv.json")
+Taxonomy <- jsonlite::fromJSON("test/viruses.tsv.json")
 
 # show in browser
 sankeyNetwork(Links = Taxonomy$links, Nodes = Taxonomy$nodes, Source = "source", 
