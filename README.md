@@ -51,9 +51,19 @@ Here, we have identified 12 Mycobacterium phage Naca, 10 Microbacterium phage Di
 ```
 
 Run:
+
 ```bash
-./tsv2json.rb test/viruses.tsv 200
+ruby tsv2json.rb test/viruses.tsv 200
 ```
+
+or to specifically include or exclude certain values regardless of the cutoff (e.g. 200), respectively:
+
+```bash
+ruby tsv2json.rb test.tsv 200 '[B.1.351.2,B.1.351.3,B.1.617.2,B.1.617.1,B.1.617.3]' '[B.1.177.86,B.1.177.81,B.1.177.62,B.1.258.17,A.27,B.1.221,B.1.525,B.1.1.318,B.1.160,B.1.1.317,B.1.258]'
+```
+
+* first list includes
+* second list excludes
 
 You should apply a cutoff (here ``200``) depending on your input because otherwise the Sankey plot will become to large. You can test different cutoffs.  
 
