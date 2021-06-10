@@ -8,6 +8,16 @@
 
 TSV = File.open(ARGV[0], 'r')
 JSON = File.open(ARGV[0]+".json", 'w')
+if ARGV[2]
+    explicit_list = ARGV[2].sub('[','').sub(']','').split(',') 
+else
+    explicit_list = []
+end
+if ARGV[3]
+    exclude_list = ARGV[3].sub('[','').sub(']','').split(',') 
+else
+    exclude_list = []
+end
 
 cutoff = ARGV[1].to_i
 
@@ -17,9 +27,14 @@ taxa_count = 0
 TSV.each do |line|
     split = line.chomp.split("\t")
     count = split[0].to_i
-   
-    next if count < cutoff
-    
+    child = split[split.size-1]
+
+    next if exclude_list.include?(child)
+
+    if count < cutoff
+        next unless explicit_list.include?(child)
+    end
+
     # nodes
     lineage = split[2,split.size]
 
